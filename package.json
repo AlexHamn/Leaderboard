@@ -21,7 +21,11 @@
     },
     "homepage": "https://github.com/AlexHamn/Leaderboard#readme",
     "devDependencies": {
+        "babel-eslint": "^10.1.0",
         "css-loader": "^6.3.0",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.24.2",
         "html-webpack-plugin": "^5.3.2",
         "style-loader": "^3.3.0",
         "webpack": "^5.57.1",
