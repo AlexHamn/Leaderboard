@@ -1,20 +1,20 @@
 * {
-    list-style: none;
+  list-style: none;
 }
 
 main {
-    display: flex;
+  display: flex;
 }
 
 #scores div {
-    display: flex;
+  display: flex;
 }
 
 #addScore {
-    margin-left: 3rem;
+  margin-left: 3rem;
 }
 
 #addScore form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
