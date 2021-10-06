@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nfetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    name: \"My cool new game\" \n  })\n})\n  .then(res => {\n    return res.json()\n  })\n  .then(data => console.log(data));\n\n//# sourceURL=webpack://Leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nlet game = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hp3AefNEZGwcSDhJHhLB';\nlet scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hp3AefNEZGwcSDhJHhLB/scores/';\n\nfetch(scores , {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    \"user\": \"John Doe\",\n\t  \"score\": 42 \n  })\n})\n  .then(res => {\n    return res.json()\n  })\n  .then(data => console.log(data));\n\n  fetch(scores , {\n  method: 'GET',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  // body: JSON.stringify({\n  //   \"user\": \"John Doe\",\n\t//   \"score\": 42 \n  // })\n})\n  .then(res => {\n    return res.json()\n  })\n  .then(data => console.log(data));\n\n//# sourceURL=webpack://Leaderboard/./src/index.js?");
 
 /***/ })
 
