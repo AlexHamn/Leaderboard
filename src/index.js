@@ -1,6 +1,6 @@
 import './style.css';
 
-const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hp3AefNEZGwcSDhJHhLB/scores/';
+const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7oyqKQQCxsTaogFAwN0N/scores/';
 
 let scoresArray = [];
 
@@ -29,6 +29,7 @@ function displayScores() {
   });
 }
 
+document.addEventListener('DOMContentLoaded', displayScores);
 refreshButton.addEventListener('click', displayScores);
 
 const addButton = document.getElementById('addButton');
@@ -38,6 +39,7 @@ const score = document.getElementById('score');
 function addScore(e) {
   e.preventDefault();
 
+  // if (user.value && typeof score.value === 'number') {
   fetch(scores, {
     method: 'POST',
     headers: {
@@ -48,6 +50,8 @@ function addScore(e) {
       score: score.value,
     }),
   });
+  displayScores();
+  // }
 }
 
 addButton.addEventListener('click', addScore);
