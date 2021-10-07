@@ -1,6 +1,6 @@
 import './style.css';
 
-const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7oyqKQQCxsTaogFAwN0N/scores/';
+const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/i4vts8lsqZgTgqo77Ovp/scores/';
 
 let scoresArray = [];
 
@@ -8,19 +8,21 @@ const scoresList = document.getElementById('scoresList');
 
 const refreshButton = document.getElementById('refresh');
 
-function displayScores() {
+async function displayScores() {
   scoresList.innerHTML = '';
 
-  fetch(scores, {
+  const response = await fetch(scores, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      scoresArray = data.result;
-    });
+  });
+
+  const data = await response.json();
+
+  const result = await data.result;
+
+  scoresArray = result;
 
   scoresArray.forEach((score) => {
     const li = document.createElement('li');
@@ -39,7 +41,6 @@ const score = document.getElementById('score');
 function addScore(e) {
   e.preventDefault();
 
-  // if (user.value && typeof score.value === 'number') {
   fetch(scores, {
     method: 'POST',
     headers: {
@@ -50,8 +51,9 @@ function addScore(e) {
       score: score.value,
     }),
   });
+  user.value = '';
+  score.value = '';
   displayScores();
-  // }
 }
 
 addButton.addEventListener('click', addScore);
