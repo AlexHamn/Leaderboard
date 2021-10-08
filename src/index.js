@@ -6,6 +6,8 @@ let scoresArray = [];
 
 const scoresList = document.getElementById('scoresList');
 
+console.log(scoresList.innerHTML);
+
 const refreshButton = document.getElementById('refresh');
 
 async function displayScores() {
@@ -23,12 +25,14 @@ async function displayScores() {
   const result = await data.result;
 
   scoresArray = result;
-
-  scoresArray.forEach((score) => {
-    const li = document.createElement('li');
-    li.innerHTML = `<p>${score.user}: ${score.score}</p>`;
-    scoresList.append(li);
-  });
+  if (!scoresList.innerHTML) {
+    console.log('working');
+    scoresArray.forEach((score) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<p>${score.user}: ${score.score}</p>`;
+      scoresList.append(li);
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', displayScores);
