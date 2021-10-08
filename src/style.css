@@ -1,9 +1,64 @@
 * {
   list-style: none;
+  font-family: "Comic Neue", "Courier New", Courier, monospace;
+  border-radius: 1%;
+  font-weight: bolder;
 }
 
 main {
   display: flex;
+  margin-left: 4rem;
+}
+
+h1 {
+  margin: 2rem;
+}
+
+button {
+  all: unset;
+  border: 3px solid black;
+  border-radius: 5%;
+  padding: 0.2em 0.4rem;
+  box-shadow: 4px 3px black;
+  background: white;
+  cursor: pointer;
+  user-select: none;
+  width: min-content;
+  height: min-content;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+#refresh {
+  margin-left: 1rem;
+}
+
+#addButton {
+  align-self: flex-end;
+}
+
+input {
+  border: 3px solid black;
+  border-radius: 5%;
+  margin: 0.5rem 0;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+ul {
+  border: 3px solid black;
+  padding: unset;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+li:nth-child(odd) {
+  background: rgba(128, 128, 128, 0.267);
+}
+
+li p {
+  margin: unset;
+  padding: 0.3rem;
 }
 
 #scores div {
@@ -17,4 +72,33 @@ main {
 #addScore form {
   display: flex;
   flex-direction: column;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+  max-height: 50px;
+  background: rgb(121, 121, 121);
+  text-align: right;
+  border: 3px solid black;
+}
+
+footer p {
+  all: unset;
+  margin: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
